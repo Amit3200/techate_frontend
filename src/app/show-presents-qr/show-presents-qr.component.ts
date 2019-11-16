@@ -83,15 +83,15 @@ export class ShowPresentsQRComponent implements OnInit {
       trCreate.appendChild(td4);
       p.appendChild(trCreate);
     }
-    for(var i=0;i<this.presentStudents["students"].length;i++){
-      (<HTMLInputElement>document.getElementById(this.presentStudents["students"][i])).checked=true;
+    for(var i=0;i<this.presentStudents["student"].length;i++){
+      (<HTMLInputElement>document.getElementById(this.presentStudents["student"][i])).checked=true;
     }
   }
   markSuccess(){
-    var d={"presents":[]};
+    var d={"present":[]};
     for(var i=0;i<this.allStudents["student"].length;i++){
-      if((<HTMLInputElement>document.getElementById(this.presentStudents["students"][i])).checked==true){
-        d["presents"].push(<HTMLInputElement>document.getElementById(this.presentStudents["students"][i].registration));
+      if((<HTMLInputElement>document.getElementById(this.presentStudents["student"][i])).checked==true){
+        d["present"].push(<HTMLInputElement>document.getElementById(this.presentStudents["student"][i].registration));
       }
     }
     this.addFuncObj.sendFinalProd(d);
