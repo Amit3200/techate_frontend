@@ -21,6 +21,8 @@ import { ShowPresentsQRComponent } from './show-presents-qr/show-presents-qr.com
 import { StudentdashboardComponent } from './studentdashboard/studentdashboard.component';
 import { ScanPageComponent } from './scan-page/scan-page.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { FormUploadComponent } from './form-upload/form-upload.component';
+import { PresentFacesComponent } from './present-faces/present-faces.component';
 const routes: Routes = [
   { path: '',component: LoginTeacherComponent},
   { path: 'teacherdashboard', component: TeacherHomepageComponent },
@@ -31,6 +33,8 @@ const routes: Routes = [
   { path: 'showPresentQR',component:ShowPresentsQRComponent},
   { path: 'studentdashboard', component:StudentdashboardComponent},
   { path: 'scanQr',component:ScanPageComponent},
+  { path: 'fileUpload',component:FormUploadComponent},
+  { path: 'presentFaces',component:PresentFacesComponent},
   { path: '**',component:TeacherHomepageComponent}
 ];
 
@@ -52,7 +56,9 @@ const routes: Routes = [
     ShowQrCodeComponent,
     ShowPresentsQRComponent,
     StudentdashboardComponent,
-    ScanPageComponent
+    ScanPageComponent,
+    FormUploadComponent,
+    PresentFacesComponent
   ],
   imports: [
     BrowserModule,

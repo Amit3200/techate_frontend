@@ -89,6 +89,7 @@ export class ShowPresentsQRComponent implements OnInit {
   }
   markSuccess(){
     swal.fire("Attendance Marked","Attendance Marked Succesfully","success")
+    this.router.navigateByUrl("/teacherdashboard")
   }
   async getterResp(){
     await this.getallStudents();

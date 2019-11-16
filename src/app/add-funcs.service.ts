@@ -11,6 +11,7 @@ export class AddFuncsService {
   qrCodeUrl:string="https://techbackend.herokuapp.com/api/qrcode/open"
   presentQrUrl:string="https://techbackend.herokuapp.com/api/qrcode/close/"
   markPresentQrlUrl:string="https://techbackend.herokuapp.com/api/qrcode/"
+  presentFaceUrl:string="https://techbackend.herokuapp.com/api/testimage"
   constructor(private cookieObj:CookieService,private http:Http,private router:Router) { }
   valiDateSignIn(userName:string):boolean{
     if(this.cookieObj.get("userloginId")==("12"+userName+"xuv12uvx")){
@@ -30,6 +31,9 @@ export class AddFuncsService {
   destroyCookie(){
     this.cookieObj.deleteAll();
     this.router.navigateByUrl('/login')
+  }
+  getPresentFace(){
+    return this.http.get(this.presentFaceUrl);
   }
   markPresentQr(result){
     console.log(this.markPresentQrlUrl+result.toString()+"/"+JSON.parse(this.cookieObj.get("fullObj"))["registration"].toString());
