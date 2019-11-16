@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^8.2.10",
     "@angular/router": "^8.2.10",
     "@types/moment-timezone": "^0.5.12",
+    "@zxing/ngx-scanner": "^2.0.1",
     "cli-color": "^1.4.0",
     "date-fns": "^2.4.1",
     "moment": "^2.24.0",

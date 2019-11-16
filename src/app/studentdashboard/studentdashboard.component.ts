@@ -4,13 +4,13 @@ import { AddFuncsService } from '../add-funcs.service';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
-  selector: 'app-teacher-homepage',
-  templateUrl: './teacher-homepage.component.html',
-  styleUrls: ['./teacher-homepage.component.css']
+  selector: 'app-studentdashboard',
+  templateUrl: './studentdashboard.component.html',
+  styleUrls: ['./studentdashboard.component.css']
 })
-export class TeacherHomepageComponent implements OnInit {
-  userName:string;
-  boxObj:Object;
+export class StudentdashboardComponent implements OnInit {
+  boxObj:any;
+  userName:any;
   constructor(private addFuncObj: AddFuncsService,private cookObj: CookieService,private router:Router) { }
 
   ngOnInit() {
@@ -23,5 +23,4 @@ export class TeacherHomepageComponent implements OnInit {
   logout(){
     this.addFuncObj.destroyCookie();
   }
-
 }

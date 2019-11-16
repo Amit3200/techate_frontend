@@ -7,9 +7,10 @@ import { Router } from '@angular/router'
 })
 export class AddFuncsService {
   //https://api.myjson.com/bins/etxmq
-  allUsersUrl:string="http://techbackend.herokuapp.com/api/"
-  qrCodeUrl:string="http://techbackend.herokuapp.com/api/qrcode/open"
-  presentQrUrl:string="http://techbackend.herokuapp.com/api/qrcode/close/"
+  allUsersUrl:string="https://techbackend.herokuapp.com/api/"
+  qrCodeUrl:string="https://techbackend.herokuapp.com/api/qrcode/open"
+  presentQrUrl:string="https://techbackend.herokuapp.com/api/qrcode/close/"
+  markPresentQrlUrl:string="https://techbackend.herokuapp.com/api/qrcode/"
   constructor(private cookieObj:CookieService,private http:Http,private router:Router) { }
   valiDateSignIn(userName:string):boolean{
     if(this.cookieObj.get("userloginId")==("12"+userName+"xuv12uvx")){
@@ -29,6 +30,10 @@ export class AddFuncsService {
   destroyCookie(){
     this.cookieObj.deleteAll();
     this.router.navigateByUrl('/login')
+  }
+  markPresentQr(result){
+    console.log(this.markPresentQrlUrl+result.toString()+"/"+JSON.parse(this.cookieObj.get("fullObj"))["registration"].toString());
+    return this.http.get(this.markPresentQrlUrl+result.toString()+"/"+JSON.parse(this.cookieObj.get("fullObj"))["registration"].toString());
   }
 
 }

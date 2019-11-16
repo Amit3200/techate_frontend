@@ -18,6 +18,9 @@ import { ShowQrCodeComponent } from './show-qr-code/show-qr-code.component';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpModule } from '@angular/http';
 import { ShowPresentsQRComponent } from './show-presents-qr/show-presents-qr.component';
+import { StudentdashboardComponent } from './studentdashboard/studentdashboard.component';
+import { ScanPageComponent } from './scan-page/scan-page.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 const routes: Routes = [
   { path: '',component: LoginTeacherComponent},
   { path: 'teacherdashboard', component: TeacherHomepageComponent },
@@ -26,6 +29,8 @@ const routes: Routes = [
   { path: 'mentorfeedback', component: TeacherFeedbackComponent },
   { path: 'showqrcode',component: ShowQrCodeComponent},
   { path: 'showPresentQR',component:ShowPresentsQRComponent},
+  { path: 'studentdashboard', component:StudentdashboardComponent},
+  { path: 'scanQr',component:ScanPageComponent},
   { path: '**',component:TeacherHomepageComponent}
 ];
 
@@ -45,11 +50,14 @@ const routes: Routes = [
     ShowResultsComponent,
     ClassReportComponent,
     ShowQrCodeComponent,
-    ShowPresentsQRComponent
+    ShowPresentsQRComponent,
+    StudentdashboardComponent,
+    ScanPageComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    ZXingScannerModule,
     RouterModule.forRoot(routes)
   ],
   providers: [CookieService ],
