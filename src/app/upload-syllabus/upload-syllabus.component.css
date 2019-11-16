@@ -1,0 +1,10 @@
+textarea{
+    font-size: .8rem;
+    letter-spacing: 1px;
+    resize:none;
+    height:420px;margin:10px auto;
+}
+
+.pulls-right{
+    float: right;
+}

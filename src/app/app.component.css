@@ -1,0 +1,7 @@
+.full-body-cover{
+    width: 100%;
+    background: #5e72e4;
+    margin:0px;
+    /* padding:30px 0px 60px 0px; */
+    overflow-y: hidden !important;
+}

@@ -1,0 +1,7 @@
+table{
+    border-radius:14px;
+    border-collapse: separate;
+}
+thead{
+    border-radius:14px !important;
+}

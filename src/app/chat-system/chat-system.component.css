@@ -1,0 +1,39 @@
+.show-msgs-box{
+    height:320px;
+    border:1px solid #5e72e4;
+    margin:10px auto;
+    overflow-y:scroll;
+}
+
+::-webkit-scrollbar
+{
+  width: 5px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
+}
+.msgs-sent{
+    width:60%;
+    margin:7px;
+}
+
+.sender{
+    float: right;
+}
+
+.alert{
+    margin:0px 0px -5px 0px;
+}
+
+.out-box{
+    width:100%;
+    display: inline-block;
+    height: auto !important;
+}

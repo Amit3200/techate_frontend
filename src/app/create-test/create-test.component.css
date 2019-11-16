@@ -1,0 +1,18 @@
+.testbox{
+    margin:5px;
+}
+input{
+    margin:7px;
+}
+.option-ans{
+    width:50%;
+    border:1px dashed #2dce89;
+}
+
+.add-q{
+    margin:5px;
+}
+.take-question input{
+    border:1px solid #5e72e4;
+}
+
