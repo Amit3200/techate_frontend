@@ -88,6 +88,13 @@ export class ShowPresentsQRComponent implements OnInit {
     }
   }
   markSuccess(){
+    var d={"presents":[]};
+    for(var i=0;i<this.allStudents["student"].length;i++){
+      if((<HTMLInputElement>document.getElementById(this.presentStudents["students"][i])).checked==true){
+        d["presents"].push(<HTMLInputElement>document.getElementById(this.presentStudents["students"][i]));
+      }
+    }
+    this.addFuncObj.sendFinalProd(d);
     swal.fire("Attendance Marked","Attendance Marked Succesfully","success")
     this.router.navigateByUrl("/teacherdashboard")
   }

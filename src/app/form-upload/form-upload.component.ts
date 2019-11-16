@@ -17,6 +17,6 @@ export class FormUploadComponent implements OnInit {
     }
   }
   uploadImg(){
-    setTimeout(function(){ this.router.navigateByUrl("/presentFaces") }, 10000);
+    setTimeout(function(){ this.router.navigateByUrl("/presentFaces") }, 500);
   }
 }

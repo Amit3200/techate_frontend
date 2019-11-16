@@ -12,6 +12,7 @@ export class AddFuncsService {
   presentQrUrl:string="https://techbackend.herokuapp.com/api/qrcode/close/"
   markPresentQrlUrl:string="https://techbackend.herokuapp.com/api/qrcode/"
   presentFaceUrl:string="https://techbackend.herokuapp.com/api/testimage"
+  markAttendance:string="http://techbackend.herokuapp.com/api/qrcode"
   constructor(private cookieObj:CookieService,private http:Http,private router:Router) { }
   valiDateSignIn(userName:string):boolean{
     if(this.cookieObj.get("userloginId")==("12"+userName+"xuv12uvx")){
@@ -38,6 +39,15 @@ export class AddFuncsService {
   markPresentQr(result){
     console.log(this.markPresentQrlUrl+result.toString()+"/"+JSON.parse(this.cookieObj.get("fullObj"))["registration"].toString());
     return this.http.get(this.markPresentQrlUrl+result.toString()+"/"+JSON.parse(this.cookieObj.get("fullObj"))["registration"].toString());
+  }
+  sendFinalProd(data){
+    var res=this.http.post(this.markAttendance,data).subscribe(resdata=>{
+      console.log(resdata);
+    },
+    error=>{
+      console.log("Error",error);
+    });
+    console.log(res);
   }
 
 }
