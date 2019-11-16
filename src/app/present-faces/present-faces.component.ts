@@ -90,8 +90,8 @@ renderFrontend(){
 markSuccess(){
   var d={"presents":[]};
   for(var i=0;i<this.allStudents["student"].length;i++){
-    if((<HTMLInputElement>document.getElementById(this.presentStudents["students"][i])).checked==true){
-      d["presents"].push(<HTMLInputElement>document.getElementById(this.presentStudents["students"][i]));
+    if((<HTMLInputElement>document.getElementById(this.presentStudents[0]["students"][i])).checked==true){
+      d["presents"].push(<HTMLInputElement>document.getElementById(this.presentStudents[0]["students"][i].registration));
     }
   }
   this.addFuncObj.sendFinalProd(d);

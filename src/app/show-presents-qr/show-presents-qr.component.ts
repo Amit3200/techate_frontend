@@ -91,7 +91,7 @@ export class ShowPresentsQRComponent implements OnInit {
     var d={"presents":[]};
     for(var i=0;i<this.allStudents["student"].length;i++){
       if((<HTMLInputElement>document.getElementById(this.presentStudents["students"][i])).checked==true){
-        d["presents"].push(<HTMLInputElement>document.getElementById(this.presentStudents["students"][i]));
+        d["presents"].push(<HTMLInputElement>document.getElementById(this.presentStudents["students"][i].registration));
       }
     }
     this.addFuncObj.sendFinalProd(d);
