@@ -83,15 +83,15 @@ renderFrontend(){
     trCreate.appendChild(td4);
     p.appendChild(trCreate);
   }
-  for(var i=0;i<this.presentStudents[0]["student"].length;i++){
-    (<HTMLInputElement>document.getElementById(this.presentStudents[0]["student"][i])).checked=true;
+  for(var i=0;i<this.presentStudents[0]["students"].length;i++){
+    (<HTMLInputElement>document.getElementById(this.presentStudents[0]["students"][i])).checked=true;
   }
 }
 markSuccess(){
   var d={"present":[]};
   for(var i=0;i<this.allStudents["student"].length;i++){
-    if((<HTMLInputElement>document.getElementById(this.presentStudents[0]["student"][i])).checked==true){
-      d["present"].push(<HTMLInputElement>document.getElementById(this.presentStudents[0]["student"][i].registration));
+    if((<HTMLInputElement>document.getElementById(this.allStudents[0]["student"][i].registration)).checked==true){
+      d["present"].push(<HTMLInputElement>document.getElementById(this.allStudents[0]["student"][i].registration));
     }
   }
   this.addFuncObj.sendFinalProd(d);

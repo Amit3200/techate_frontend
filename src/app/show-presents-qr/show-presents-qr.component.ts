@@ -83,17 +83,18 @@ export class ShowPresentsQRComponent implements OnInit {
       trCreate.appendChild(td4);
       p.appendChild(trCreate);
     }
-    for(var i=0;i<this.presentStudents["student"].length;i++){
-      (<HTMLInputElement>document.getElementById(this.presentStudents["student"][i])).checked=true;
+    for(var i=0;i<this.presentStudents["students"].length;i++){
+      (<HTMLInputElement>document.getElementById(this.presentStudents["students"][i])).checked=true;
     }
   }
   markSuccess(){
     var d={"present":[]};
     for(var i=0;i<this.allStudents["student"].length;i++){
-      if((<HTMLInputElement>document.getElementById(this.presentStudents["student"][i])).checked==true){
-        d["present"].push(<HTMLInputElement>document.getElementById(this.presentStudents["student"][i].registration));
+      if((<HTMLInputElement>document.getElementById(this.allStudents["student"][i].registration)).checked==true){
+        d["present"].push(<HTMLInputElement>document.getElementById(this.allStudents["student"][i].registration));
       }
     }
+    console.log(d);
     this.addFuncObj.sendFinalProd(d);
     swal.fire("Attendance Marked","Attendance Marked Succesfully","success")
     this.router.navigateByUrl("/teacherdashboard")
