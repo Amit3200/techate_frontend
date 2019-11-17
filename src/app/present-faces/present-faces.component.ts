@@ -90,10 +90,11 @@ renderFrontend(){
 markSuccess(){
   var d={"present":[]};
   for(var i=0;i<this.allStudents["student"].length;i++){
-    if((<HTMLInputElement>document.getElementById(this.allStudents[0]["student"][i].registration)).checked==true){
-      d["present"].push(<HTMLInputElement>document.getElementById(this.allStudents[0]["student"][i].registration));
+    if((<HTMLInputElement>document.getElementById(this.allStudents["student"][i].registration)).checked==true){
+      d["present"].push(<HTMLInputElement>document.getElementById(this.allStudents["student"][i].registration));
     }
   }
+  console.log(d);
   this.addFuncObj.sendFinalProd(d);
   swal.fire("Attendance Marked","Attendance Marked Succesfully","success")
   this.router.navigateByUrl('/teacherdashboard');
